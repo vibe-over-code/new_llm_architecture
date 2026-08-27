@@ -1,0 +1,22 @@
+defaults:
+  - /training/base_training@_global_.training
+
+dataset_name: dclm_filter_8k
+data_split: train
+
+total_steps: 52000
+seq_length: 8192
+global_batch_size: 128
+ilr_warmup_steps: 5200
+
+optimizer_outer:
+  optimizer_type: adamw
+  b1: 0.9
+  b2: 0.95
+  clip_gradient: 1.0
+  end_lr: 1e-05
+  init_lr: 0.0
+  lr: 8e-04
+  lr_decay_steps: 52000
+  lr_warmup_steps: 5200
+  weight_decay: 0.1
